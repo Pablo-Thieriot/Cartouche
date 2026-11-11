@@ -1,13 +1,10 @@
 name: Build APK
 
-on:
-  push:
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
@@ -32,4 +29,3 @@ jobs:
         with:
           name: cartouches-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-
